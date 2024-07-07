@@ -7,34 +7,51 @@ function format(unit){
     return unit;
     
 }
-function main()
-{
+
+// Function to format the time units
+function format(unit) {
+    return unit < 10 ? "0" + unit : unit;
+}
+
+// Function to start the clock and update the time every second
+function startClock() {
+    const hrs = document.getElementById("hrs");
+    const mins = document.getElementById("mins");
+    const secs = document.getElementById("secs");
+    const ampm = document.getElementById("am/pm");
+    setInterval(()=>{
+      const time = new Date();
+      if ( format(time.getHours()) > 12){
+        hrs.innerHTML = format(time.getHours() - 12);
+        ampm.innerHTML = "PM";
+      }
+      else{
+        hrs.innerHTML = format(time.getHours());
+        ampm.innerHTML = "AM";
+      }
+      mins.innerHTML = format(time.getMinutes());
+      secs.innerHTML = format(time.getSeconds());
+
+    },1000);
+
+
+}
     
-    console.clear();
-    var seconds = 0;
-    var minutes = 0;
-    var hours = 0;
-    
-    setInterval(() => {
-  console.log("tick");
-  seconds += 1;
-  
-  if (seconds == 60) {
-    seconds = 0;
-    minutes += 1;
-}
 
-if (minutes == 60) {
-    minutes = 0;
-    hours += 1;
-}
+  // Function to handle navigation link clicks
+  function handleNavLinks() {
+    document.querySelectorAll(".nav-link").forEach((navLink) => {
+      navLink.addEventListener("click", () => {
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.classList.remove("select");
+        });
+        navLink.classList.add("select");
+      });
+    });
+  }
 
-if (hours == 24) {
-    hours = 0;
-}
-
-console.log(format(hours) + ":" + format(minutes) + ":" + format(seconds));
-}, 1000);
-
+function main(){
+    startClock();
+    handleNavLinks();
 }
 main();

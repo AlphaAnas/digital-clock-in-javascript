@@ -1,0 +1,181 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 70vh; */
+}
+.background{
+    width:100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, rgb(231, 231, 90), rgb(77, 242, 12), blue)
+}
+/* Navigation bar styles */
+.nav-bar {
+    background-color: #663399;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-bar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.nav-bar a:hover {
+    background-color: #5a4c9c;
+}
+
+.nav-bar a.select {
+    background-color: #432f77;
+    border-radius: 5px;
+}
+
+
+.container{
+    width: 800px;
+    height:200px;
+    background:white;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+}
+.container::before{
+    content: "";
+    position:absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #f41b75;
+    border-radius:5px;
+    position:absolute;
+    left:-50px;
+    top:-50px;
+    /* to make it behind the container we add Z-index */
+    z-index: -1; 
+}
+.container::after{
+    content: "";
+    position:absolute;
+    width: 180px;
+    height: 180px;
+    background-color: rgb(255, 136, 0);
+    border-radius:50%; /* to make it a circle */
+    position:absolute;
+    right:-30px;
+    bottom:-50px;
+    /* to make it behind the container we add Z-index */
+    z-index: -1; 
+}
+
+.container::before{
+    content: "";
+    position:absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #f41b75;
+    border-radius:5px;
+    position:absolute;
+    left:-50px;
+    top:-50px;
+    /* to make it behind the container we add Z-index */
+    z-index: -1; 
+}
+/* Clock display styles */
+.clock{
+    width:100%;
+    height: 100%;
+    border-radius: 10px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+.clock span{
+    font-size : 50px;
+    width: 110px;
+    text-align: center;
+    color : rgb(0, 0, 0);
+    font-weight: 700;
+    text-shadow: 0 2px 2px #000000;
+    display: inline-block;
+    position: relative;
+}
+.clock span::after{
+    /* content : 'HOURS'; */
+    position: absolute;
+    font-size: 16px;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
+
+
+}
+#hrs::after{
+    content: "HOURS";
+}
+#mins::after{
+    content: "MINUTES";
+}
+#secs::after{
+    content: "SECONDS";
+}
+#logo {
+    display: flex;
+    align-items: left;
+    padding :0;
+    margin: 0;
+    position: absolute;
+    margin-left: 100px;
+
+}
+#logo img{
+    display: inline-block;
+    width : 70px;
+    height : 70px;
+    transform: translate(0, 10px);  
+    border-radius: 50%;
+
+
+    
+}
+/* Footer styles */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #663399;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
