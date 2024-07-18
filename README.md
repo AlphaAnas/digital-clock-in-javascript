@@ -17,4 +17,4 @@ This is a simple digital clock web application built with HTML, CSS, and JavaScr
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/digital-clock.git
+   git clone https://github.com/AlphaAnas/digital-clock-in-javascript/tree/main
